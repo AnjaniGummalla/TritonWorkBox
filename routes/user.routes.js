@@ -48,7 +48,7 @@ router.post('/createuser', function(req, res) {
           console.log('Email sent: ' + info.response);
           }
         });
-          res.status(200).send("User registration Success");
+          res.status(200).send(user);
         });
 
 });

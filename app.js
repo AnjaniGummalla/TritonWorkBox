@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var userRouter = require('./routes/user.routes');
 var projectRouter = require('./routes/project.routes');
+var taskRouter = require('./routes/task.routes');
+var aasignRouter = require('./routes/assign.routes');
 var app = express();
 
 //Databaseconnection
@@ -25,6 +27,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //app.use('/', indexRouter);
 app.use('/users', userRouter);
 app.use('/projects',projectRouter);
+app.use('/task',taskRouter);
+app.use('/assign', aasignRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
