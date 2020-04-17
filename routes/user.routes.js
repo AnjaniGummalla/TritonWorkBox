@@ -19,9 +19,13 @@ router.post('/createuser', function(req, res) {
           Name : req.body.name,
           Email : req.body.email,
           EmpID : req.body.EmpID,
-          Password:req.body.password,
+          Address:req.body.address,
           Phone : req.body.phone,
           Desgination: req.body.designation,
+          Reported:req.body.reported,
+          PassportNo: req.body.PassportNo,
+          Joining: req.body.joining,
+          EmployeeDocument:req.body.document,
         }, 
 
         function (err, user) {
@@ -32,7 +36,7 @@ router.post('/createuser', function(req, res) {
           service: 'gmail',
           auth: {
             user: 'anjani513devi@gmail.com',
-            pass: 'anjanichotu4507'
+            pass: 'anjanichotu24'
           }
         });
 

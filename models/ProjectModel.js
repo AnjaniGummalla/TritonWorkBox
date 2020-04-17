@@ -1,10 +1,13 @@
 var mongoose = require('mongoose');  
 var ProjectSchema = new mongoose.Schema({  
   Name: String,
-  StartDate: Date,
-  EndDate: Date,
-  Days: Date,
+  EmergencyContact: String,
+  Contact:String,
+  DeliveryDeadline: Date,
+  ProjectCompletion: Date,
+  TestingDeadline: Date,
   Description:String,
+  Attachment:String,
 });
 mongoose.model('Project', ProjectSchema);
 

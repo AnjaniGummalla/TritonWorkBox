@@ -6,13 +6,14 @@ var AssignSchema = new mongoose.Schema({
         ref: 'Project',
         required: true
     },
-	  User:  {  
+	  EmpID:  {  
 	  	type: Schema.Types.ObjectId,
         ref: 'User',
         required: true
     },
 	  Date: Date,
 	  AssignedBy: String,
+	  AssignedDate: Date,
 });
 mongoose.model('Assign', AssignSchema);
 

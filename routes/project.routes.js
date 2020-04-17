@@ -18,10 +18,14 @@ router.post('/create',VerifyToken, function(req, res) {
 
         ProjectModel.create({
           Name : req.body.name,
-          StartDate : req.body.StartDate,
-          EndDate : req.body.EndDate,
-          Days : req.body.Days,
+          DeliveryDeadline : req.body.DeliveryDeadline,
+          ProjectCompletion : req.body.ProjectCompletion,
+          TestingDeadline : req.body.TestingDeadline,
           Description: req.body.Description,
+          Contact: req.body.Contact,
+          EmergencyContact:req.body.EmergencyContact,
+          Attachment:req.body.Attachment,
+
         }, 
         function (err, Data) {
           if (err) return res.status(500).send("There was a problem registering the project`.");

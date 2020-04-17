@@ -17,9 +17,10 @@ var config = require('../config'); // get config file
 router.post('/create',VerifyToken, function(req, res) {
         AssignModel.create({
           Project:req.body.project,
-          User : req.body.user,
+          EmpID : req.body.EmpID,
           AssignedBy:req.body.assignedBy,
           Date: req.body.date,
+          AssignedDate: req.body.AssignedDate,
         }, 
         function (err, Data) {
           if (err) return res.status(500).send("There was a problem registering the Task`.");
