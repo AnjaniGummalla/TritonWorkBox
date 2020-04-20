@@ -28,7 +28,7 @@ router.post('/create',VerifyToken, function(req, res) {
 
         }, 
         function (err, Data) {
-          if (err) return res.status(500).send("There was a problem registering the project`.");
+          if (err) return res.status(500).send("There was a problem registering the project.");
           console.log("project details",Data)
 
           res.status(200).send(Data);

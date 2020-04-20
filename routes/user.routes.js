@@ -26,10 +26,12 @@ router.post('/createuser', function(req, res) {
           PassportNo: req.body.PassportNo,
           Joining: req.body.joining,
           EmployeeDocument:req.body.document,
+          Password:req.body.password,
+          AdminType:req.body.AdminType,
         }, 
 
         function (err, user) {
-          if (err) return res.status(500).send("There was a problem registering the user`.");
+          if (err) return res.status(500).send("There was a problem registering the user.");
           console.log(err)
 
            var transporter = nodemailer.createTransport({
@@ -79,7 +81,7 @@ router.post('/Userlogin', function(req, res) {
 });
 
 router.get('/getlist',VerifyToken, function (req, res) {
-        User.find({}, function (err, users) {
+        User.find({AdminType:0}, function (err, users) {
             if (err) return res.status(500).send("There was a problem finding the users.");
             res.status(200).send(users);
         });

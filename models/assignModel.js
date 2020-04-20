@@ -4,12 +4,12 @@ var AssignSchema = new mongoose.Schema({
 	  Project: {  
 	  	type: Schema.Types.ObjectId,
         ref: 'Project',
-        required: true
+        //required: true
     },
 	  EmpID:  {  
 	  	type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true
+        //required: true
     },
 	  Date: Date,
 	  AssignedBy: String,

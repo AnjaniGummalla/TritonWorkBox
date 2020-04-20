@@ -20,7 +20,7 @@ router.post('/create',VerifyToken, function(req, res) {
           TaskNo : req.body.TaskNo,
           Project:req.body.project,
           Title : req.body.Title,
-          Process : req.body.process,
+          Process : req.body.Process,
           EstimatedTime : req.body.EstimatedTime,
           Description: req.body.Description,
           StartDate: req.body.StartDate,
@@ -43,7 +43,7 @@ router.get('/getlist',VerifyToken, function (req, res) {
          TaskModel.find({}, function (err, Data) {
             if (err) return res.status(500).send("There was a problem finding the data.");
             res.status(200).send(Data);
-        });
+        }).populate('Project');
 });
 router.get('/view/:id', VerifyToken, function (req, res) {
        TaskModel.findById(req.params.id, function (err, Data) {

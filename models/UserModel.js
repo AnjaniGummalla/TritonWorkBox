@@ -16,6 +16,7 @@ var UserSchema = new mongoose.Schema({
   	unique: true
   
   },
+  Password: String,
   
   Address: String,
   
@@ -35,6 +36,12 @@ var UserSchema = new mongoose.Schema({
    PassportNo:String,
    
    EmployeeDocument: String,
+    
+    AdminType: {
+        type: Number,
+        enum: [0, 1],
+        default: 0
+    },
 });
 mongoose.model('User', UserSchema);
 

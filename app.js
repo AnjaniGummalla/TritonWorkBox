@@ -9,6 +9,9 @@ var taskRouter = require('./routes/task.routes');
 var aasignRouter = require('./routes/assign.routes');
 var DesignationRouter = require('./routes/desingation.routes');
 var EODRouter = require('./routes/EOD.routes');
+var AttendenceRouter = require('./routes/attendence.routes');
+var TestingRouter = require('./routes/testing.routes');
+var TaskRedoRouter = require('./routes/taskredo.routes');
 var app = express();
 
 //Databaseconnection
@@ -33,6 +36,10 @@ app.use('/task',taskRouter);
 app.use('/assign', aasignRouter);
 app.use('/desgination', DesignationRouter);
 app.use('/EOD', EODRouter);
+app.use('/attendence', AttendenceRouter);
+app.use('/taskredo', TaskRedoRouter);
+app.use('/testing', TestingRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

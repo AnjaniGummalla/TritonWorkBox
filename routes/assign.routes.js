@@ -34,7 +34,7 @@ router.get('/getlist',VerifyToken, function (req, res) {
          AssignModel.find({}, function (err, Data) {
             if (err) return res.status(500).send("There was a problem finding the data.");
             res.status(200).send(Data);
-        });
+        }).populate('EmpID Project');
 });
 router.get('/view/:id', VerifyToken, function (req, res) {
        AssignModel.findById(req.params.id, function (err, Data) {
